@@ -1,6 +1,11 @@
 @import 'reset';
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@900&display=swap');
 
+$wid: 20vw;
+$ht: 60vh;
+$gap: 3px;
+$innerGap: 10;
+
 header {
 	width: 100%;
 	position: absolute;
@@ -49,12 +54,12 @@ figure {
 			align-items: center;
 
 			.box {
-				width: 400px;
-				height: 600px;
+				width: $wid;
+				height: $ht;
 				position: relative;
-				background: #333;
-				box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.3);
-				border-radius: 200px;
+				background: #fff;
+				//box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+				border-radius: calc($wid / 2);
 				display: flex;
 				align-items: center;
 				justify-content: center;
@@ -65,18 +70,27 @@ figure {
 					position: absolute;
 					width: 160%;
 					height: 160%;
-					background: conic-gradient(from 90deg, transparent 70%, rgba(0, 255, 255, 0.5) 90%, rgb(0, 255, 255) 100%);
+					background: conic-gradient(from 90deg, transparent 70%, rgba(0, 0, 0, 0.5) 90%, rgb(0, 0, 0) 100%);
 					animation: ani 3s linear infinite;
 				}
 				&::after {
 					content: '';
 					position: absolute;
-					top: 5px;
-					left: 5px;
-					width: 390px;
-					height: 590px;
-					border-radius: 195px;
+					top: $gap;
+					left: $gap;
+					width: calc($wid - ($gap * 2));
+					height: calc($ht - ($gap * 2));
+					border-radius: calc(($wid - ($gap * 2)) / 2);
+					background: #fff;
+				}
+
+				.con {
+					width: calc($wid - $gap * $innerGap);
+					height: calc($ht - $gap * $innerGap);
 					background: #333;
+					border-radius: calc(($wid - $gap * $innerGap) / 2);
+					position: relative;
+					z-index: 2;
 				}
 			}
 		}
