@@ -25,14 +25,35 @@ header {
   display: flex;
   justify-content: space-between;
 }
+header h1 a {
+  font: bold 24px/1 "arial";
+  color: #111;
+}
 header #gnb {
   display: flex;
+  align-items: center;
   gap: 30px;
+}
+header #gnb a {
+  font: bold 14px/1 "arial";
+  color: #555;
+}
+header .btnRegister {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 40px;
+  border: 1px solid #555;
+  border-radius: 20px;
+  font: bold 14px/1 "arial";
+  color: #555;
 }
 
 figure #visual {
   width: 100%;
   height: 100vh;
+  background: #ddd;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -47,23 +68,72 @@ figure #visual .txtBox {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  gap: 20px;
+  gap: 40px;
+  position: relative;
+  z-index: 3;
 }
 figure #visual .txtBox > * {
   width: 100%;
+}
+figure #visual .txtBox > span {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font: 12px/1 "arial";
+}
+figure #visual .txtBox > span::before {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: #333;
+}
+figure #visual .txtBox h1 {
+  font: normal 5vw/1 "heebo";
+  color: #111;
+}
+figure #visual .txtBox p {
+  font: bold 16px/2 "arial";
+  color: #777;
+  margin-bottom: 40px;
+}
+figure #visual .txtBox nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+figure #visual .txtBox nav a {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  border-radius: 20px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font: bold 12px/1 "arial";
+}
+figure #visual .txtBox nav a:nth-of-type(1) {
+  width: 150px;
+}
+figure #visual .txtBox nav a:nth-of-type(2) {
+  width: 40px;
+}
+figure #visual .txtBox nav strong {
+  font: bold 14px/1 "arial";
 }
 figure #visual .picBox {
   width: 48%;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
 }
 figure #visual .picBox .box {
-  width: 20vw;
-  height: 60vh;
+  width: 27vw;
+  height: 75vh;
   position: relative;
-  background: #fff;
-  border-radius: 10vw;
+  background: #ddd;
+  border-radius: 13.5vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,18 +152,33 @@ figure #visual .picBox .box::after {
   position: absolute;
   top: 3px;
   left: 3px;
-  width: calc(20vw - 6px);
-  height: calc(60vh - 6px);
-  border-radius: calc((20vw - 6px) / 2);
-  background: #fff;
+  width: calc(27vw - 6px);
+  height: calc(75vh - 6px);
+  border-radius: calc((27vw - 6px) / 2);
+  background: #ddd;
 }
 figure #visual .picBox .box .con {
-  width: calc(20vw - 30px);
-  height: calc(60vh - 30px);
-  background: #333;
-  border-radius: calc((20vw - 30px) / 2);
+  width: calc(27vw - 45px);
+  height: calc(75vh - 45px);
+  background: #111;
+  border-radius: calc((27vw - 45px) / 2);
   position: relative;
   z-index: 2;
+  overflow: hidden;
+}
+figure #visual .picBox .box .con img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+figure #visual .outlined {
+  font: 15vw/1 "heebo";
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  position: absolute;
+  bottom: 7vh;
+  right: 5vw;
+  z-index: 3;
 }
 
 @keyframes ani {
