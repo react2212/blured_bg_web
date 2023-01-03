@@ -179,6 +179,7 @@ figure #visual .picBox .box .con {
   position: relative;
   z-index: 2;
   overflow: hidden;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 figure #visual .picBox .box .con img {
   width: 100%;
